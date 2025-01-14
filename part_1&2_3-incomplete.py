@@ -67,7 +67,7 @@ results["Seattle"]["relative_monthly_precipitation"] = relative_monthly_precipit
 with open('results.json', 'w') as file:
     json.dump(results, file, indent=4)
 
-# Part 3
+# Part 3 - INCOMPLETE
 
 import csv
 
