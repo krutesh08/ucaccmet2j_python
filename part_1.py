@@ -42,3 +42,27 @@ with open('results.json', 'w') as file:
     json.dump(results, file, indent=4)
 
 
+# Part 2 
+
+# Extract Seattle's monthly precipitation data
+monthly_precipitation = results["Seattle"]["total_monthly_precipitation"]
+
+total_yearly_precipitation = sum(monthly_precipitation.values())
+
+relative_monthly_precipitation = {}
+# Loop through each month in the monthly_precipitation dictionary
+for month in monthly_precipitation:
+    # Get the precipitation value for the current month
+    value = monthly_precipitation[month]
+    
+    # Calculate the relative precipitation for the month
+    relative_value = value / total_yearly_precipitation
+    
+    # Add the result to the relative_monthly_precipitation dictionary
+    relative_monthly_precipitation[month] = relative_value
+
+results["Seattle"]["total_yearly_precipitation"] = total_yearly_precipitation
+results["Seattle"]["relative_monthly_precipitation"] = relative_monthly_precipitation   
+
+with open('results.json', 'w') as file:
+    json.dump(results, file, indent=4)
