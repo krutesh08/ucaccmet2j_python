@@ -66,3 +66,10 @@ results["Seattle"]["relative_monthly_precipitation"] = relative_monthly_precipit
 
 with open('results.json', 'w') as file:
     json.dump(results, file, indent=4)
+
+# Part 3
+
+import csv
+
+with open('ucaccmet2j_python/stations.csv', 'r') as file:
+    stations = list(csv.DictReader(file))  
